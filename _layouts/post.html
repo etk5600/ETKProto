@@ -21,30 +21,12 @@ layout: default
         </div>
         <div class="read-more">
             <p>Also Read:</p>
-            {% for post in site.posts limit:3 %}
             <section class="container">
-                <a href="{{ post.url }}" class="card-lnk">
-                <div class="card-container">
-                  <div class="card-image">
-                    <img src="{{ post.faimg }}" />
-                  </div>
-                  <div class="card-body">
-                    <h1>
-                      {{ post.title }}
-                    </h1>
-                    <p class="card-subtitle">
-                      {{ post.description }}
-                    </p>
-                    <div class="card-author">
-                      <div class="author-info">
-                        <p class="author-name">{{ post.author }}</p>
-                        <p class="post-timestamp">{{ post.date | date: "%B %dth, %Y" }}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </a>
+              {% for post in site.posts limit:3 %}
+                
+                {%- include blog-card.html -%}
+
+              {% endfor %}
               </section>
-            {% endfor %}
         </div>
     </div>

@@ -563,7 +563,7 @@ nav ul li a:hover {
   /* Blog-Home Styles */
 
   .blog-hero {
-    background-image: url("assets/images/blog-hero.jpg");
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1541,7 +1541,7 @@ ul {
 }
 
 .m-h-a::before {
-  content: url( "/assets/images/blog.png");
+  content: url( "{{ site.baseurl }}/assets/images/blog.png");
   padding-right: 1rem;
   vertical-align: middle;
 }
