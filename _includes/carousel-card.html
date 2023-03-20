@@ -1,0 +1,25 @@
+<a href="{{ treks.url }}">
+    <div class="t-container">
+        <div class="t-plate" style="background-image: url('{{ site.baseurl }}/assets/images/treks/{{ treks.destination }}/hero.jpg');"></div>
+            <div class="o-lay"></div>
+            <div class="g-lay"><span>{{ treks.destination }}</span></div>
+          <div class="t-infi">
+            <div class="t-in">
+                <span>
+            <i class="fa-solid fa-bus"></i> + <i class="fa-solid fa-house"></i>
+                </span>
+            <span class="s-info">
+              Travel + {{ treks.duration }}
+            </span>
+            </div>
+            <div class="t-last">
+              <span>₹ {{ treks.aprice }}</span>
+            </div>
+          </div>
+          {% if treks.upcoming-dates %}
+          <div class="u-dt">{{ treks.upcoming-dates | date: "%B %d" }}</div>
+          {% else %}
+
+          {% endif %}
+    </div>
+</a>

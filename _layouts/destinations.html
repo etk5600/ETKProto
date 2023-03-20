@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<div class="destination-wrapper">
+    <section class="destinations-hero">
+        <div class="o-lay"></div>
+        <h1>All Treks</h1>
+        
+    </section>
+    <section class="s-media">
+        <h2 class="main-headings">Upcoming Treks/Tours</h2>
+        <div class="under"></div>
+        <div class="carousel-container">
+            <div class="carouselee">
+                {% assign trek_dates = "" | split: "," %}
+                {% for treks in site.trek %}
+                    {% if treks.upcoming-dates %}
+                        {% assign trek_dates = trek_dates | push: treks.upcoming-dates %}
+                    {% endif %}
+                {% endfor %}
+                {% assign sorted_dates = trek_dates | sort %}
+
+
+ 
+                {% assign count = 0 %}
+                {% for date in sorted_dates %}
+                {% for treks in site.trek %}
+                    {% if date == treks.upcoming-dates %}
+                        {% if count < 12 %}
+                        <!-- Carousel Code Included -->
+                        {%- include carousel-card.html -%}
+                        <!-- Carousel Code Above -->
+                            {% assign count = count | plus:1 %}
+                        {% endif %}
+                    {% endif %}
+                    {% if count == 10 %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+                {% endfor %}
+              </div>
+                <button class="carousel-btn left-btn">&larr;</button>
+                <button class="carousel-btn right-btn">&rarr;</button>
+            </div>
+    </section>
+    <section class="s-media oday">
+        <h2 class="main-headings">1-Day Thrills</h2>
+        <div class="under"></div>
+        <div class="t-contain-hold">
+            {% assign count = 0 %}
+                {% for treks in site.trek %}
+                    {% if treks.type == "1-day" and treks.upcoming-dates == NIL %}
+                        {%- include carousel-card.html -%}
+                    {% endif %}
+                {% endfor %}
+        </div>
+    </section>
+    <section class="s-media oday">
+        <h2 class="main-headings">2-Day Thrills</h2>
+        <div class="under"></div>
+        <div class="t-contain-hold">
+            {% assign count = 0 %}
+                {% for treks in site.trek %}
+                    {% if treks.type == "2-day" %}
+                        {%- include carousel-card.html -%}
+                    {% endif %}
+                {% endfor %}
+        </div>
+    </section>
+</div>

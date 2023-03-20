@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="blog-hero">
+    <div class="blog-txt">
+        <div class="txt-change">
+            <h1>ADVENTURE DAIRIES<br>
+              <span class='random-word'></span>
+            </h1>
+        </div>
+    </div>  
+</div>
+
+<div class="blog-container">
+    <div class="blog-heading"><h1>Latest Blogs</h1></div>
+    <div class="under">
+    </div>
+    <section class="container containeree">
+    {% for post in site.posts %}
+                <a href="{{ post.url }}" class="card-lnk">
+                <div class="card-container" >
+                  <div class="card-image">
+                    <img src="{{ post.faimg }}">
+                  </div>
+                  <div class="card-body">
+                    <h1>
+                      {{ post.title }}
+                    </h1>
+                    <p class="card-subtitle">
+                      {{ post.description }}
+                    </p>
+                    <div class="card-author">
+                      <div class="author-info">
+                        <p class="author-name">{{ post.author }}</p>
+                        <p class="post-timestamp">{{ post.date | date: "%B %dth, %Y" }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </a>
+                {% endfor %}
+            </section>
+</div>

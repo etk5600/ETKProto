@@ -1,0 +1,31 @@
+<header>
+    <section class="navigation scrolled" id="navbar" {% if page.layout == "faq" or page.layout == "terms" %}style="background: linear-gradient(to right, #134E5E, #71B280);"{% endif %} {% if page.layout == "home"%}style="border: 0;"{% endif %}>
+        <div class="nav-container">
+          <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}/assets/images/eco-tours-no-bg.png"></a>
+          <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </a>
+          <nav class="navbar-links">
+            <ul>
+              <li>
+                <a href="{{ site.baseurl }}/index" class="nav-link nav-link-grow-up">Home</a>
+              </li>
+              <li>
+                <a href="{{ site.baseurl }}/destinations" class="nav-link nav-link-grow-up">Destinations</a>
+              </li>
+              <li>
+                <a href="#!" class="nav-link nav-link-grow-up">Corporate Outings</a>
+              </li>
+              <li>
+                <a href="{{ site.baseurl }}/blog" class="nav-link nav-link-grow-up">Blog</a>
+              </li>
+              <li>
+                <a href="{{ site.baseurl }}/about" class="nav-link nav-link-grow-up">About Us</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+</header>

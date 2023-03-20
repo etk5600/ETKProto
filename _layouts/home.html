@@ -1,0 +1,150 @@
+---
+layout: default
+---
+
+<div class="home-hero" style="background-image: url('{{ site.baseurl }}/assets/images/hero-img1.png');">
+    <div class="o-lay"></div>
+    <div class="h-hero-txt">
+        <h1 class="d-txt">Say Hello To New<br><span></span></h1>
+        <a href="#" class="exp-more">Explore More</a>
+        <div class="c-holder">
+            <div class="c-item-holder">
+            <div class="c-item">
+                <i class="fa-regular fa-pen-to-square"></i>
+                <p>Custom Tours</p>
+            </div>
+            <div class="c-item">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <p>Best <br> Price</p>
+            </div>
+            </div>
+            <div class="c-item-holder">
+            <div class="c-item">
+                <i class="fa-solid fa-person-hiking"></i>
+                <p>200+ Local Guides</p>
+            </div>
+            <div class="c-item">
+                <i class="fa-solid fa-seedling"></i>
+                <p>We Care for Nature</p>
+            </div>
+        </div>
+        </div>
+      </div>
+</div>
+<div class="main-content">
+    <section class="s-media">
+        <h2 class="main-headings">Upcoming Treks/Tours</h2>
+        <div class="under"></div>
+        <div class="carousel-container">
+            <div class="carouselee">
+                {% assign trek_dates = "" | split: "," %}
+                {% for treks in site.trek %}
+                    {% if treks.upcoming-dates %}
+                        {% assign trek_dates = trek_dates | push: treks.upcoming-dates %}
+                    {% endif %}
+                {% endfor %}
+                {% assign sorted_dates = trek_dates | sort %}
+
+
+ 
+                {% assign count = 0 %}
+                {% for date in sorted_dates %}
+                {% for treks in site.trek %}
+                    {% if date == treks.upcoming-dates %}
+                        {% if count < 12 %}
+                        <!-- Carousel Code Included -->
+                        {%- include carousel-card.html -%}
+                        <!-- Carousel Code Above -->
+                            {% assign count = count | plus:1 %}
+                        {% endif %}
+                    {% endif %}
+                    {% if count == 10 %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+                {% endfor %}
+              </div>
+                <button class="carousel-btn left-btn">&larr;</button>
+                <button class="carousel-btn right-btn">&rarr;</button>
+            </div>
+    </section>
+    <section class="s-media b-media">
+        <h2 class="main-headings">Best for Beginners</h2>
+        <div class="under"></div>
+        <div class="carousel-container">
+            <div class="carouselee carouselee1">
+                {% assign count = 0 %}
+                {% for treks in site.trek %}
+                    {% if treks.type == "1-day" and treks.upcoming-dates == NIL %}
+                        {%- include carousel-card.html -%}
+                    {% endif %}
+                    {% if count == 8 %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button class="carousel-btn left-btn left-btn1">&larr;</button>
+            <button class="carousel-btn right-btn right-btn1">&rarr;</button>
+        </div>
+        <a href="#" class="exp-more exep">See More</a>
+    </section>
+    <section class="s-media ">
+        <h2 class="main-headings m-h-a">Read Our Blogs</h2>
+        <div class="under"></div>
+        <div class="carousel-container">
+            <div class="carouselee  carouselee2">
+                {% assign count = 0 %}
+                {% for post in site.posts %}
+                        {%- include blog-card.html -%}
+                    {% if count == 8 %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="s-media">
+        <div class="roadmap">
+            <h2>Our Roadmap</h2>
+             
+<!-- The Timeline -->
+
+<ul class="timeline">
+
+	<!-- Item 1 -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Unveiling 150+ Destinations</span>
+				<span class="time-wrapper"><span class="time">Apr 30th</span></span>
+			</div>
+			<div class="desc">Listing of 150+ destinations which are lesser known. Promote and operate tours to these destinations.</div>
+		</div>
+	</li>
+  
+	<!-- Item 2 -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Launch of Green Store</span>
+				<span class="time-wrapper"><span class="time">July 20th</span></span>
+			</div>
+			<div class="desc">Shop sustainably and support local artisans at our eco-store.</div>
+		</div>
+	</li>
+
+	<!-- Item 3 -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Travel Stars</span>
+				<span class="time-wrapper"><span class="time">Sept 24th</span></span>
+			</div>
+			<div class="desc">Join our influencer-led journeys for an extraordinary travel experience. Discover new destinations, make new friends, and capture amazing moments.</div>
+		</div>
+	</li>
+  
+</ul>
+
+    </section>
+</div>

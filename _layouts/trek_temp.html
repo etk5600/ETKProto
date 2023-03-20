@@ -1,0 +1,195 @@
+---
+layout: default
+---
+<div class="trek-hero" style="background-image: url('{{ site.baseurl }}/assets/images/treks/{{ page.destination }}/hero.jpg');">
+    <div class="trek-overlay"></div>
+    <div class="trek-hero-txt">
+        <h2>{{ page.trek-name }}</h2>
+    </div>
+</div>
+<div class="trek-wrapper">
+    <div class="trek-grid">
+        <div class="trek-info">
+            <div class="price price-mob  box-shadow">
+                <div class="start-price">
+                  Starting from <span>INR {{ page.fprice }}</span>
+                </div>
+                <div class="act-price">
+                  <b>INR {{ page.aprice }}/-</b><br>per adult
+                </div>
+                <div class="up-dates">
+                    <i class="fa-solid fa-calendar-day cal"></i>
+                    <strong>Upcoming Trip: </strong><span>{% if page.upcoming-dates %}
+                        {{ page.upcoming-dates | date: "%B %d, %Y"}}
+                        {% else %}
+                        No Dates
+                        {% endif %}</span> 
+                </div>
+                {% if page.upcoming-dates %}
+                <a href="{{ page.r-pay-link }}" class="book-btn">Book Now</a>
+                {% else %}
+                <a data-sumome-listbuilder-id="3b572ce4-c185-435f-a65e-cb192199c9d0" class="book-btn" style="background-color: #68abb8;">Enquire Now</a>
+                {% endif %}
+            </div>
+            <div class="quick-info box-shadow t-padding">
+                <h2><b>Quick Info</b></h2>
+                <div class="info-container">
+                <div class="info-item">
+                    <div class="info-hold">
+                        <i class="fa-solid fa-stopwatch cal"></i>
+                        <span>Duration: <span class="inner">{{ page.duration }}</span> </span>
+                    </div>
+                    <div class="info-hold">
+                        <i class="fa-solid fa-mountain cal"></i>
+                        <span>Max-Altitude: <span class="inner">{{ page.altitude }}M</span></span>
+                    </div>
+                    <div class="info-hold">
+                        <i class="fa-solid fa-gauge cal"></i>
+                        <span>Difficulty: <span class="inner">{{ page.difficulty }}</span></span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-hold">
+                        <i class="fa-solid fa-tape cal"></i>
+                        <span>Trek-Distance: <span class="inner">{{ page.t-distance }}KM</span> </span>
+                    </div>
+                    <div class="info-hold">
+                        <i class="fa-solid fa-location-crosshairs cal"></i>
+                        <span>Locaton: <span class="inner">{{ page.location }}</span></span>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="gallery box-shadow t-padding">
+                <h2><b>Gallery</b></h2>
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        {% for i in (1..5) %}
+                      <div class="carousel-item">
+                        <img src="{{ site.basurl }}/assets/images/treks/{{ page.destination }}/{{ page.destination }}-{{ i }}.jpg" alt="{{ page.destination }}">
+                      </div>
+                      {% endfor %}
+                    </div>
+                    <button class="carousel-prev">&#10094;</button>
+                    <button class="carousel-next">&#10095;</button>
+                </div>                  
+            </div>
+            <div class="about-trip box-shadow t-padding">
+                <h2><b>About Trip</b></h2>
+                <div class="read-more-container">
+                    <p>{{ page.read-more }}</p>
+                    <p class="more-content">{{ page.more-content }}</p>
+                    <br>
+                    <a class="read-more-button" href="#">Read More</a>
+                </div>  
+            </div>
+            <div class="price-select box-shadow t-padding">
+                <h2><b>Price</b></h2>
+                <div class="price-trans">
+                    <div class="price-item">
+                        <h2><b>With Transportation</b></h2>(Transportation & Accomodation Included)
+                        <p class="orange"><b> ₹ {{ page.t-pack }}/- per person</b></p>
+                    </div>
+                    <div class="price-item">
+                        <h2><b>Without Transportation</b></h2>(Accomodation Included)
+                        <p class="orange"><b> ₹ {{ page.wt-pack }}/- per person</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="brief-itineary box-shadow t-padding">
+                <h2><b>Brief-Itinerary</b></h2> 
+                {% if page.dayz %}
+                <h3><b>Day 0</b></h3>
+                <ul>
+                    {% for item in page.dayz %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% if page.dayo %}
+                <h3><b>Day 1</b></h3>
+                <ul>
+                    {% for item in page.dayo %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% if page.dayt %}
+                <h3><b>Day 2</b></h3>
+                <ul>
+                    {% for item in page.dayt %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="inc-exc box-shadow t-padding">
+                <h2><b>Inclusions & Exclusions</b></h2>
+                <h3><b>Inclusions</b></h3>
+                <ul class="inc">
+                    {% for include in page.inclusions %}
+                    <li>{{ include }}</li>
+                    {% endfor %}
+                </ul>
+                <h3><b>Exclusions</b></h3>
+                <ul class="exc">
+                    <li>Any kind of personal expenses.</li>
+                    <li>Any kind of insurance (health, medical, life accidental,etc ).</li>
+                    <li>Anything not included above.</li>
+                </ul>
+            </div>
+            <div class="things-to-carry box-shadow t-padding">
+                <h2><b>Things to Carry</b></h2>
+                <ul>
+                    {% for thing in page.things-to-carry %}
+                    <li>{{ thing }}</li>
+                    {% endfor %} 
+                </ul>
+            </div>
+            <div class="rel-trek box-shadow t-padding">
+                <h2><b>Related Trek</b></h2>
+                <div class="carousel-container">
+                <div class="carouselee">
+                    {% assign count = 0 %}
+                    {% for treks in site.trek %}
+                        {% if treks.category == page.category and treks.title != page.title %}
+                            {% if count < 4 %}
+                            {%- include carousel-card.html -%}
+                                {% assign count = count | plus:1 %}
+                            {% endif %}
+                        {% endif %}
+                        {% if count == 4 %}
+                            {% break %}
+                        {% endif %}
+                    {% endfor %}
+                    
+                  </div>
+                    <button class="carousel-btn left-btn">&larr;</button>
+                    <button class="carousel-btn right-btn">&rarr;</button>
+                </div>
+            </div>
+        </div>
+        <div class="price  box-shadow price-sticky">
+            <div class="start-price">
+              Starting from <span>INR {{ page.fprice }}</span>
+            </div>
+            <div class="act-price">
+              <b>INR {{ page.aprice }}/-</b><br>per adult
+            </div>
+            <div class="up-dates">
+                <i class="fa-solid fa-calendar-day cal"></i>
+                <strong>Upcoming Trip: </strong><span>
+                    {% if page.upcoming-dates %}
+                    {{ page.upcoming-dates | date: "%B %d, %Y"}}
+                    {% else %}
+                    
+                    {% endif %}</span>
+            </div>
+            {% if page.upcoming-dates %}
+            <a href="{{ page.r-pay-link }}" class="book-btn">Book Now</a>
+            {% else %}
+            <a data-sumome-listbuilder-id="3b572ce4-c185-435f-a65e-cb192199c9d0" class="book-btn" style="background-color: #68abb8;">Enquire Now</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

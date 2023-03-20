@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<div class="faq-card">
+    <h2 class="title">FAQs</h2>
+    <div class="acc-container">
+      <h3 class="subhead">Accommodation and Travel</h3>
+        {% assign count = 0 %}
+        {% for question in page.a-questions %}
+        <button class="acc-btn">{{ question }}</button>
+        
+        <div class="acc-content">
+          <p>{{ page.a-answers[count] }}</p>
+        </div>
+        {% assign count = count | plus:1 %}
+        {% endfor %}
+    </div>
+    
+    <div class="acc-container">
+    <h3 class="subhead">Booking</h3>
+      {% assign count = 0 %}
+      {% for question in page.b-questions %}
+      <button class="acc-btn">{{ question }}</button>
+      
+      <div class="acc-content">
+        <p>{{ page.b-answers[count] }}</p>
+      </div>
+      {% assign count = count | plus:1 %}
+      {% endfor %}
+    </div>
+
+    <div class="acc-container">
+      <h3 class="subhead">Pickup and Dropoff</h3>
+        {% assign count = 0 %}
+        {% for question in page.pd-questions %}
+        <button class="acc-btn">{{ question }}</button>
+        
+        <div class="acc-content">
+          <p>{{ page.pd-answers[count] }}</p>
+        </div>
+        {% assign count = count | plus:1 %}
+        {% endfor %}
+    </div>
+
+    <div class="acc-container">
+      <h3 class="subhead">Safety, Group Size and Sex Ratio</h3>
+        {% assign count = 0 %}
+        {% for question in page.sg-questions %}
+        <button class="acc-btn">{{ question }}</button>
+        
+        <div class="acc-content">
+          <p>{{ page.sg-answers[count] }}</p>
+        </div>
+        {% assign count = count | plus:1 %}
+        {% endfor %}
+    </div>
+
+    <div class="acc-container">
+      <h3 class="subhead">Safety and First Aid</h3>
+        {% assign count = 0 %}
+        {% for question in page.sf-questions %}
+        <button class="acc-btn">{{ question }}</button>
+        
+        <div class="acc-content">
+          <p>{{ page.sf-answers[count] }}</p>
+        </div>
+        {% assign count = count | plus:1 %}
+        {% endfor %}
+    </div>
+  </div>

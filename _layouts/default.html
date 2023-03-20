@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  {%- include head.html -%}
+<body>
+  
+    <!--Nav Bar-->
+    {%- include header.html -%}
+    <main>
+        {%- include loader.html -%}
+       {{ content }}
+       <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='d39d911faff700283f83bb6d0e1502fd68a38881ea989f95dc66a60bfdab2e5f';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+    </main>
+    {%- include footer.html -%}
+    <script>
+      window.addEventListener("load", function () {
+    document.querySelector(".loader").style.display = "none";
+    });
+    </script>
+    <script>
+    const toggleButton = document.getElementsByClassName('toggle-button')[0];
+const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+const navbar = document.getElementById("navbar");
+
+toggleButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  navbarLinks.classList.toggle('active');
+  navbar.classList.toggle('navbar-active');
+  window.scroll(0, window.pageYOffset + 10);
+});
+
+function updateNavbar() {
+  if (window.pageYOffset > 0) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+}
+
+// Call updateNavbar when the page is initially loaded
+updateNavbar();
+
+// Call updateNavbar when the page is scrolled
+window.onscroll = function() {
+  updateNavbar();
+};
+
+
+
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
+    <script>
+      let i = 0;
+
+const randomizeText = () => {
+  const phrase = document.querySelector('.random-word');
+  const compStyles = window.getComputedStyle(phrase);
+  const animation = compStyles.getPropertyValue('animation');
+  const animationTime = parseFloat(animation.match(/\d*[.]?\d+/)) * 1000;
+  
+  const phrases = ['Explore', 'Experience', 'Energize'];
+  
+  i = randomNum(i, phrases.length);
+  const newPhrase = phrases[i];
+  
+  setTimeout(() => {
+    phrase.textContent = newPhrase;
+  }, 400); // time to allow opacity to hit 0 before changing word
+}
+
+const randomNum = (num, max) => {
+  let j = Math.floor(Math.random() * max);
+  
+  // ensure diff num every time
+  if (num === j) {
+    return randomNum(i, max);
+  } else {
+    return j;
+  }
+}
+
+const getAnimationTime = () => {
+  const phrase = document.querySelector('.random-word');
+  const compStyles = window.getComputedStyle(phrase);
+  let animation = compStyles.getPropertyValue('animation');
+  
+  // firefox support for non-shorthand property
+  animation != "" ? animation : animation = compStyles.getPropertyValue('-moz-animation-duration');
+  
+    // webkit support for non-shorthand property
+  animation != "" ? animation : animation = compStyles.getPropertyValue('-webkit-animation-duration');
+  
+  
+  const animationTime = parseFloat(animation.match(/\d*[.]?\d+/)) * 1000;
+  return animationTime;
+}
+
+randomizeText();
+setInterval(randomizeText, getAnimationTime());
+
+    </script>
+    <script>
+      const carousel = document.querySelector('.carousel');
+const carouselInner = carousel.querySelector('.carousel-inner');
+const carouselItems = carousel.querySelectorAll('.carousel-item');
+const carouselPrev = carousel.querySelector('.carousel-prev');
+const carouselNext = carousel.querySelector('.carousel-next');
+const carouselItemWidth = carouselItems[0].clientWidth;
+let carouselIndex = 0;
+
+carouselNext.addEventListener('click', () => {
+  carouselIndex++;
+  carouselInner.style.transform = `translateX(-${carouselIndex * carouselItemWidth}px)`;
+  if (carouselIndex >= carouselItems.length - 1) {
+    carouselNext.disabled = true;
+  }
+  if (carouselIndex > 0) {
+    carouselPrev.disabled = false;
+  }
+});
+
+carouselPrev.addEventListener('click', () => {
+  carouselIndex--;
+  carouselInner.style.transform = `translateX(-${carouselIndex * carouselItemWidth}px)`;
+  if (carouselIndex <= 0) {
+    carouselPrev.disabled = true;
+  }
+  if (carouselIndex < carouselItems.length - 1) {
+    carouselNext.disabled = false;
+  }
+});
+
+    </script>
+    <script>
+      const readMoreButton = document.querySelector('.read-more-button');
+const moreContent = document.querySelector('.more-content');
+
+readMoreButton.addEventListener('click', (event) => {
+   event.preventDefault(); 
+   moreContent.classList.toggle('show');
+   if (readMoreButton.textContent === 'Read More') {
+      readMoreButton.textContent = 'Read Less';
+   } else {
+      readMoreButton.textContent = 'Read More';
+   }
+});
+
+    </script>
+    <script type="text/javascript">!function(){var e={"token":"+916363703398","position":"right","bottomSpacing":"25","callToActionMessage":"Plan your experience ✨","displayOn":"everywhere","subtitle":"We have the perfect weekend experience just for you! ","message":{"name":"Eco Tours Karnataka 🌄 ✨","content":"Welcome to Eco Tours Karnataka! We can't wait to show you all the amazing things ✨ this state has to offer..."}},t=document.location.protocol+"//bothelp.io",o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=t+"/widget-folder/widget-whatsapp-chat.js",o.onload=function(){BhWidgetWhatsappChat.init(e)};var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(o,n)}();</script>
+    <script>const btns = document.querySelectorAll(".acc-btn");
+
+      // fn
+      function accordion() {
+        // this = the btn | icon & bg changed
+        this.classList.toggle("is-open");
+      
+        // the acc-content
+        const content = this.nextElementSibling;
+      
+        // IF open, close | else open
+        if (content.style.maxHeight) content.style.maxHeight = null;
+        else content.style.maxHeight = content.scrollHeight + "px";
+      }
+      
+      // event
+      btns.forEach((el) => el.addEventListener("click", accordion));</script>
+
+      <script>
+        const cards = document.querySelector('.carouselee');
+        const cardWidth = cards.querySelector('.t-container').offsetWidth;
+        const buttonLeft = document.querySelector('.left-btn');
+        const buttonRight = document.querySelector('.right-btn');
+
+        buttonLeft.addEventListener('click', () => {
+        cards.scrollBy({
+          left: -cardWidth,
+          behavior: 'smooth'
+        });
+      });
+
+      buttonRight.addEventListener('click', () => {
+        cards.scrollBy({
+          left: cardWidth,
+          behavior: 'smooth'
+        });
+      });
+
+      const cards1 = document.querySelector('.carouselee1');
+        const cardWidth1 = cards.querySelector('.t-container').offsetWidth;
+        const buttonLeft1 = document.querySelector('.left-btn1');
+        const buttonRight1 = document.querySelector('.right-btn1');
+
+        buttonLeft1.addEventListener('click', () => {
+        cards1.scrollBy({
+          left: -cardWidth1,
+          behavior: 'smooth'
+        });
+      });
+
+      buttonRight1.addEventListener('click', () => {
+        cards1.scrollBy({
+          left: cardWidth1,
+          behavior: 'smooth'
+        });
+      });
+      </script>
+</body>
+</html>

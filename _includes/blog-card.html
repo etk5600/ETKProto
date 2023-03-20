@@ -1,0 +1,21 @@
+<a href="{{ post.url }}" class="card-lnk">
+    <div class="card-container" >
+      <div class="card-image">
+        <img src="{{ post.faimg }}">
+      </div>
+      <div class="card-body">
+        <h1>
+          {{ post.title }}
+        </h1>
+        <p class="card-subtitle">
+          {{ post.description }}
+        </p>
+        <div class="card-author">
+          <div class="author-info">
+            <p class="author-name">{{ post.author }}</p>
+            <p class="post-timestamp">{{ post.date | date: "%B %dth, %Y" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </a>
