@@ -1,7 +1,7 @@
 <header>
     <section class="navigation scrolled" id="navbar" {% if page.layout == "faq" or page.layout == "terms" %}style="background: linear-gradient(to right, #134E5E, #71B280);"{% endif %} {% if page.layout == "home"%}style="border: 0;"{% endif %}>
         <div class="nav-container">
-          <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}/assets/images/eco-tours-no-bg.png"></a>
+          <a href="{{ site.url }}"><img src="{{ site.url }}/assets/images/eco-tours-no-bg.png"></a>
           <a href="#" class="toggle-button">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -10,19 +10,19 @@
           <nav class="navbar-links">
             <ul>
               <li>
-                <a href="{{ site.baseurl }}" class="nav-link nav-link-grow-up">Home</a>
+                <a href="{{ site.url }}" class="nav-link nav-link-grow-up">Home</a>
               </li>
               <li>
-                <a href="{{ site.baseurl }}/destinations" class="nav-link nav-link-grow-up">Destinations</a>
+                <a href="{{ site.url }}/destinations" class="nav-link nav-link-grow-up">Destinations</a>
               </li>
               <li>
-                <a href="{{ site.baseurl }}/corporate-outings" class="nav-link nav-link-grow-up">Corporate Outings</a>
+                <a href="{{ site.url }}/corporate-outings" class="nav-link nav-link-grow-up">Corporate Outings</a>
               </li>
               <li>
-                <a href="{{ site.baseurl }}/blog" class="nav-link nav-link-grow-up">Blog</a>
+                <a href="{{ site.url }}/blog" class="nav-link nav-link-grow-up">Blog</a>
               </li>
               <li>
-                <a href="{{ site.baseurl }}/about" class="nav-link nav-link-grow-up">About Us</a>
+                <a href="{{ site.url }}/about" class="nav-link nav-link-grow-up">About Us</a>
               </li>
             </ul>
           </nav>

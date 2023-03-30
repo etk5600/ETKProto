@@ -15,8 +15,8 @@ permalink: /trek/channarayanadurga  # NOT TO BE MESSED WITH
 destination: channarayanadurga
 fprice: 1949
 aprice: 1749
-upcoming-dates:
-r-pay-link: 
+upcoming-dates: -15-04-2023
+r-pay-link: https://rzp.io/l/yH2HZ2DR62
 # BOOK CARD END
 
 # QUICK INFO

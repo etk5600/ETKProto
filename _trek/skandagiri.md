@@ -15,7 +15,7 @@ permalink: /trek/skandagiri # NOT TO BE MESSED WITH
 destination: skandagiri
 fprice: 2149
 aprice: 1999
-upcoming-dates: -25-03-2023
+upcoming-dates: 
 r-pay-link: https://rzp.io/l/65YZo1ar
 # BOOK CARD END
 

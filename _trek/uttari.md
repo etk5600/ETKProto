@@ -15,7 +15,7 @@ permalink: /trek/uttari # NOT TO BE MESSED WITH
 destination: uttari
 fprice: 1949
 aprice: 1749
-upcoming-dates: 15-04-2023
+upcoming-dates: -29-04-2023
 r-pay-link: https://rzp.io/l/6saFngHf
 # BOOK CARD END
 

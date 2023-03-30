@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<div class="home-hero" style="background-image: url('{{ site.baseurl }}/assets/images/hero-img1.png');">
+<div class="home-hero" style="background-image: url('{{ site.url }}/assets/images/hero-img1.png');">
     <div class="o-lay"></div>
     <div class="h-hero-txt">
         <h1 class="d-txt">Say Hello To New<br><span></span></h1>
-        <a href="{{ site.baseurl }}/destinations" class="exp-more">Explore More</a>
+        <a href="{{ site.url }}/destinations" class="exp-more">Explore More</a>
         <div class="c-holder">
             <div class="c-item-holder">
             <div class="c-item">
@@ -33,36 +33,39 @@ layout: default
 </div>
 <div class="main-content">
     <section class="s-media">
-        <h2 class="main-headings">Upcoming Treks/Tours</h2>
+        <h2 class="main-headings">Upcoming Treks</h2>
         <div class="under"></div>
         <div class="carousel-container">
             <div class="carouselee">
                 {% assign trek_dates = "" | split: "," %}
                 {% for treks in site.trek %}
-                    {% if treks.upcoming-dates %}
-                        {% assign trek_dates = trek_dates | push: treks.upcoming-dates %}
-                    {% endif %}
+                  {% if treks.upcoming-dates %}
+                    {% assign trek_dates = trek_dates | push: treks.upcoming-dates %}
+                  {% endif %}
                 {% endfor %}
-                {% assign sorted_dates = trek_dates | sort %}
-
-
- 
+                
+                {% assign sorted_dates = trek_dates | sort_natural: "first_month_then_day" %}
+                
+                {% assign sorted_treks = site.trek | sort: "order" %}
+                
                 {% assign count = 0 %}
                 {% for date in sorted_dates %}
-                {% for treks in site.trek %}
+                  {% for treks in sorted_treks %}
                     {% if date == treks.upcoming-dates %}
-                        {% if count < 12 %}
+                      {% if count < 12 %}
                         <!-- Carousel Code Included -->
                         {%- include carousel-card.html -%}
                         <!-- Carousel Code Above -->
-                            {% assign count = count | plus:1 %}
-                        {% endif %}
+                        {% assign count = count | plus:1 %}
+                      {% endif %}
                     {% endif %}
                     {% if count == 10 %}
-                        {% break %}
+                      {% break %}
                     {% endif %}
+                  {% endfor %}
                 {% endfor %}
-                {% endfor %}
+                
+
               </div>
                 <button class="carousel-btn left-btn">&larr;</button>
                 <button class="carousel-btn right-btn">&rarr;</button>
@@ -86,7 +89,7 @@ layout: default
             <button class="carousel-btn left-btn left-btn1">&larr;</button>
             <button class="carousel-btn right-btn right-btn1">&rarr;</button>
         </div>
-        <a href="{{ site.baseurl }}/destinations" class="exp-more exep">See More</a>
+        <a href="{{ site.url }}/destinations" class="exp-more exep">See More</a>
     </section>
     <section class="s-media ">
         <h2 class="main-headings m-h-a">Read Our Blogs</h2>

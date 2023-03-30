@@ -15,7 +15,7 @@ permalink: /trek/makalidurga # NOT TO BE MESSED WITH
 destination: makalidurga
 fprice: 2199
 aprice: 1999
-upcoming-dates:
+upcoming-dates: 
 r-pay-link: 
 # BOOK CARD END
 

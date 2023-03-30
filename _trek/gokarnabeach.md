@@ -15,7 +15,7 @@ permalink: /trek/gokarna # NOT TO BE MESSED WITH
 destination: gokarna
 fprice: 4499
 aprice: 4099
-upcoming-dates: 08-04-2023
+upcoming-dates: 
 r-pay-link: https://rzp.io/l/XYjS1DV
 # BOOK CARD END
 

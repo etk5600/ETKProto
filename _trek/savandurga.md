@@ -15,7 +15,7 @@ permalink: /trek/savandurga
 destination: savandurga
 fprice: 2199
 aprice: 1949
-upcoming-dates: 01-04-2023
+upcoming-dates: -22-04-2023
 r-pay-link: https://rzp.io/l/kVYSiBbjy
 # BOOK CARD END
 

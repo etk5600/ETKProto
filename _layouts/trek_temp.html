@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="trek-hero" style="background-image: url('{{ site.baseurl }}/assets/images/treks/{{ page.destination }}/hero.jpg');">
+<div class="trek-hero" style="background-image: url('{{ site.url }}/assets/images/treks/{{ page.destination }}/hero.jpg');">
     <div class="trek-overlay"></div>
     <div class="trek-hero-txt">
         <h2>{{ page.trek-name }}</h2>
@@ -66,7 +66,7 @@ layout: default
                     <div class="carousel-inner">
                         {% for i in (1..5) %}
                       <div class="carousel-item">
-                        <img src="{{ site.baseurl }}/assets/images/treks/{{ page.destination }}/{{ page.destination }}-{{ i }}.jpg" alt="{{ page.destination }}">
+                        <img src="{{ site.url }}/assets/images/treks/{{ page.destination }}/{{ page.destination }}-{{ i }}.jpg" alt="{{ page.destination }}">
                       </div>
                       {% endfor %}
                     </div>
@@ -133,8 +133,8 @@ layout: default
                 </ul>
                 <h3><b>Exclusions</b></h3>
                 <ul class="exc">
-                    <li>Any kind of personal expenses.</li>
-                    <li>Any kind of insurance (health, medical, life accidental,etc ).</li>
+                    <li>Personal Expenses.</li>
+                    <li>Insurance (health, medical, life accidental,etc ).</li>
                     <li>Anything not included above.</li>
                 </ul>
             </div>
@@ -147,7 +147,7 @@ layout: default
                 </ul>
             </div>
             <div class="rel-trek box-shadow t-padding">
-                <h2><b>Related Trek</b></h2>
+                <h2><b>Related Treks</b></h2>
                 <div class="carousel-container">
                 <div class="carouselee">
                     {% assign count = 0 %}
