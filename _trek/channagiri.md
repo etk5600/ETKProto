@@ -16,7 +16,7 @@ permalink: /trek/channagiri # NOT TO BE MESSED WITH
 destination: channagiri
 fprice: 2049
 aprice: 1889
-upcoming-dates: -08-04-2023
+upcoming-dates: -015-04-2023
 r-pay-link: https://rzp.io/l/NU4BxQij
 # BOOK CARD END
 
