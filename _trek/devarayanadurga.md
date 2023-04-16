@@ -15,7 +15,7 @@ permalink: /trek/devarayanadurga  # NOT TO BE MESSED WITH
 destination: devarayanadurga
 fprice: 2099
 aprice: 1899
-upcoming-dates: -15-04-2023
+upcoming-dates: -0022-04-2023
 r-pay-link: https://rzp.io/l/yV1d8t0o
 # BOOK CARD END
 
